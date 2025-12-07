@@ -1,6 +1,6 @@
-# Safe Plastomers Pvt Ltd - Website
+# Safe Plastomer Pvt. Ltd. - Website
 
-A modern, fully responsive website for Safe Plastomers Pvt Ltd built with React.
+A modern, fully responsive website for Safe Plastomer Pvt. Ltd. built with React.
 
 ## Features
 
@@ -13,7 +13,7 @@ A modern, fully responsive website for Safe Plastomers Pvt Ltd built with React.
 ## Pages
 
 - **Home**: Hero section, services overview, and company introduction
-- **Services**: Detailed service offerings (Commercial, Residential, Consulting, Custom Manufacturing)
+- **Services**: Detailed product offerings (Liner Bags, PP Woven Sacks, Stretch Film, Shrink Rolls & Pouches, Custom Packaging)
 - **Projects**: Portfolio showcase of completed projects
 - **About**: Company story, mission, and values
 - **Contact**: Contact form and company information
