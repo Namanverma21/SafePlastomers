@@ -1,0 +1,144 @@
+.services-section {
+  padding: 6rem 2rem;
+  background: white;
+}
+
+.services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.services-intro {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.services-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.services-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.2;
+  max-width: 500px;
+}
+
+.services-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #333;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  max-width: fit-content;
+  margin-top: 1rem;
+}
+
+.services-cta:hover {
+  background: #ff6b35;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+}
+
+.services-cta .arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.services-cta:hover .arrow {
+  transform: translate(3px, -3px);
+}
+
+.services-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.service-card {
+  padding: 3rem 2rem;
+  border-bottom: 1px solid #ff6b35;
+  transition: background 0.3s ease;
+}
+
+.service-card:last-child {
+  border-bottom: none;
+}
+
+.service-card:hover {
+  background: #f8f8f8;
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+@media (max-width: 968px) {
+  .services-container {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .services-title {
+    font-size: 2.2rem;
+  }
+
+  .service-card {
+    padding: 2.5rem 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .services-section {
+    padding: 4rem 1rem;
+  }
+
+  .services-title {
+    font-size: 1.8rem;
+  }
+
+  .service-card {
+    padding: 2rem 1rem;
+  }
+
+  .service-icon {
+    font-size: 2.5rem;
+  }
+
+  .service-title {
+    font-size: 1.2rem;
+  }
+}
+

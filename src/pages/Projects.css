@@ -1,0 +1,154 @@
+.projects-page {
+  margin-top: 70px;
+  min-height: calc(100vh - 70px);
+}
+
+.projects-page-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 6rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.projects-page-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.projects-page-hero p {
+  font-size: 1.3rem;
+  opacity: 0.95;
+}
+
+.projects-page-content {
+  padding: 4rem 2rem;
+  background: #f8f8f8;
+}
+
+.projects-page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project-image {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.1);
+}
+
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+  display: flex;
+  align-items: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-category {
+  background: #ff6b35;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.project-info {
+  padding: 2rem;
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 968px) {
+  .projects-page-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .projects-page-hero p {
+    font-size: 1.1rem;
+  }
+
+  .projects-page-container {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-page-hero {
+    padding: 4rem 1rem;
+  }
+
+  .projects-page-hero h1 {
+    font-size: 2rem;
+  }
+
+  .projects-page-hero p {
+    font-size: 1rem;
+  }
+
+  .projects-page-content {
+    padding: 3rem 1rem;
+  }
+
+  .projects-page-container {
+    grid-template-columns: 1fr;
+  }
+
+  .project-image {
+    height: 220px;
+  }
+}
+
