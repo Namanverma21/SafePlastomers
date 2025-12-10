@@ -27,10 +27,11 @@ const Footer = () => {
           <div className="footer-column">
             <h3 className="footer-title">HEAD OFFICE</h3>
             <div className="footer-contact">
-              <p>500 Industrial Park Road,</p>
-              <p>Mumbai, Maharashtra 400001</p>
-              <p>+91 123-456-7890</p>
-              <p>info@safeplastomers.com</p>
+              <p>KHASRA NO.-74, KHEDLI IP-4,</p>
+              <p>BEGUMPUR, BAHADRABAD, HARIDWAR-249402</p>
+              <p>Uttarakhand, India</p>
+              <p>+91-9359626881</p>
+              <p>safeplastomer@gmail.com</p>
             </div>
           </div>
 

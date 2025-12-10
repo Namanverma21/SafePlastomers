@@ -19,18 +19,18 @@
 }
 
 .about-label {
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700;
   color: #666;
   text-transform: uppercase;
   letter-spacing: 2px;
 }
 
 .about-title {
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-size: 3.2rem;
+  font-weight: 800;
   color: #333;
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 .about-description {
@@ -101,18 +101,280 @@
 
 .about-image {
   width: 100%;
-  height: 100%;
-  min-height: 500px;
-  border-radius: 8px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  max-height: 560px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
 }
 
 .about-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  background: #f7f7f7;
   transition: transform 0.5s ease;
+}
+
+.about-secondary {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.about-secondary-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 480px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f7f7f7;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+}
+
+.about-secondary-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.about-secondary-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 0.6rem;
+}
+
+.about-secondary-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.about-awards {
+  margin-top: 3.5rem;
+  padding: 2.5rem;
+  border-radius: 14px;
+  background: #f9fafb;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 30px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.about-awards-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.about-awards-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #333;
+}
+
+.about-awards-subtitle {
+  font-size: 1rem;
+  color: #555;
+}
+
+.about-awards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.about-brand {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: center;
+  background: #f9fafb;
+  padding: 2.5rem;
+  border-radius: 14px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.about-brand-image {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.about-brand-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.about-brand-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 0.6rem;
+}
+
+.about-brand-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.about-brand-gallery {
+  margin-top: 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.9rem;
+}
+
+.brand-thumb {
+  background: white;
+  border-radius: 10px;
+  padding: 0.75rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.about-owner {
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 2rem;
+  align-items: center;
+  background: white;
+  padding: 2.25rem;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+}
+
+.about-owner-image {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f7f7f7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.about-owner-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.about-owner-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.6rem;
+}
+
+.about-owner-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+.award-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.award-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 420px;
+  background: #f5f6f7;
+  overflow: hidden;
+}
+
+.award-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.award-caption {
+  padding: 0.9rem 1rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+.about-brand {
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2rem;
+  align-items: center;
+  background: #f9fafb;
+  padding: 2.5rem;
+  border-radius: 14px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.about-brand-image {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.about-brand-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.about-brand-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.6rem;
+}
+
+.about-brand-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
 }
 
 .about-image:hover img {
@@ -130,8 +392,32 @@
   }
 
   .about-image {
-    min-height: 400px;
+    max-height: 480px;
     order: -1;
+  }
+
+  .about-secondary {
+    grid-template-columns: 1fr;
+  }
+
+  .about-awards {
+    margin-top: 3rem;
+    padding: 2rem;
+  }
+
+  .about-awards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-brand {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .about-owner {
+    grid-template-columns: 1fr;
+    padding: 2rem;
   }
 
   .about-stats {
@@ -168,7 +454,54 @@
   }
 
   .about-image {
-    min-height: 300px;
+    max-height: 360px;
+  }
+
+  .about-secondary {
+    gap: 1.5rem;
+  }
+
+  .about-awards {
+    padding: 1.5rem;
+    gap: 1.25rem;
+  }
+
+  .award-caption {
+    font-size: 0.95rem;
+  }
+
+  .about-brand {
+    padding: 1.75rem;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-owner {
+    padding: 1.75rem;
+    gap: 1.5rem;
+  }
+}
+
+/* Fine-tune secondary image sizing */
+@media (max-width: 968px) {
+  .about-secondary {
+    margin-top: 2.5rem;
+    grid-template-columns: 1fr;
+  }
+
+  .about-secondary-image {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 640px) {
+  .about-secondary {
+    margin-top: 2rem;
+    gap: 1.5rem;
+  }
+
+  .about-secondary-image {
+    max-height: 320px;
   }
 }
 

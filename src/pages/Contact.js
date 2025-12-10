@@ -24,16 +24,50 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    // Simulate form submission
-    setTimeout(() => {
+    // Configure EmailJS (set these in your .env file)
+    const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+    const templateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      console.error('EmailJS environment variables are missing.');
+      return;
+    }
+
+    try {
+      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          service_id: serviceId,
+          template_id: templateId,
+          user_id: publicKey,
+          template_params: {
+            user_name: formData.name,
+            user_email: formData.email,
+            user_phone: formData.phone,
+            message: formData.message,
+            to_email: 'safeplastomer@gmail.com',
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
       setIsSubmitting(false);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', phone: '', message: '' });
-      
-      setTimeout(() => {
-        setSubmitStatus(null);
-      }, 5000);
-    }, 1500);
+
+      setTimeout(() => setSubmitStatus(null), 5000);
+    } catch (err) {
+      console.error(err);
+      setIsSubmitting(false);
+      setSubmitStatus('error');
+    }
   };
 
   return (
@@ -51,15 +85,15 @@ const Contact = () => {
             <div className="contact-details">
               <div className="contact-detail-item">
                 <h3>📍 Address</h3>
-                <p>500 Industrial Park Road,<br />Mumbai, Maharashtra 400001</p>
+                <p>KHASRA NO.-74, KHEDLI IP-4,<br />BEGUMPUR, BAHADRABAD,<br />HARIDWAR-249402, UTTARAKHAND</p>
               </div>
               <div className="contact-detail-item">
                 <h3>📞 Phone</h3>
-                <p>+91 123-456-7890</p>
+                <p>+91-9359626881</p>
               </div>
               <div className="contact-detail-item">
                 <h3>✉️ Email</h3>
-                <p>info@safeplastomers.com</p>
+                <p>safeplastomer@gmail.com</p>
               </div>
               <div className="contact-detail-item">
                 <h3>🕒 Business Hours</h3>
@@ -123,6 +157,11 @@ const Contact = () => {
             {submitStatus === 'success' && (
               <div className="form-success">
                 Thank you! Your message has been sent successfully. We'll get back to you soon.
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="form-error">
+                Sorry, something went wrong. Please try again later or reach us at safeplastomer@gmail.com.
               </div>
             )}
 
