@@ -192,71 +192,93 @@
   gap: 1.5rem;
 }
 
-.about-brand {
+.about-industries {
   margin-top: 0.5rem;
   margin-bottom: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 2rem;
-  align-items: center;
   background: #f9fafb;
-  padding: 2.5rem;
+  padding: 3rem 2.5rem;
   border-radius: 14px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.about-brand-image {
-  width: 100%;
-  max-width: 420px;
+.about-industries-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-industries-title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #333;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.about-industries-description {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.7;
+  max-width: 700px;
   margin: 0 auto;
+}
+
+.about-industries-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.industry-card {
   background: white;
   border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
 }
 
-.about-brand-image img {
+.industry-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.industry-card-image {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.about-brand-title {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #333;
-  margin-bottom: 0.6rem;
-}
-
-.about-brand-description {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.7;
-}
-
-.about-brand-gallery {
-  margin-top: 1.25rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 0.9rem;
-}
-
-.brand-thumb {
-  background: white;
-  border-radius: 10px;
-  padding: 0.75rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  height: 220px;
+  overflow: hidden;
+  background: #f7f7f7;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.brand-thumb img {
+.industry-card-image img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+.industry-card:hover .industry-card-image img {
+  transform: scale(1.05);
+}
+
+.industry-card-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin: 1.25rem 1.5rem 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.industry-card-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  margin: 0 1.5rem 1.5rem;
 }
 
 .about-owner {
@@ -288,11 +310,26 @@
   display: block;
 }
 
+.about-owner-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 0.4rem;
+}
+
+.about-owner-role {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #ff6b35;
+  margin-bottom: 1rem;
+}
+
 .about-owner-title {
   font-size: 1.4rem;
   font-weight: 700;
   color: #333;
   margin-bottom: 0.6rem;
+  margin-top: 0.5rem;
 }
 
 .about-owner-description {
@@ -334,48 +371,6 @@
   text-align: center;
 }
 
-.about-brand {
-  margin-top: 0.5rem;
-  margin-bottom: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 2rem;
-  align-items: center;
-  background: #f9fafb;
-  padding: 2.5rem;
-  border-radius: 14px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 10px 30px rgba(0, 0, 0, 0.05);
-}
-
-.about-brand-image {
-  width: 100%;
-  max-width: 420px;
-  margin: 0 auto;
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-}
-
-.about-brand-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  display: block;
-}
-
-.about-brand-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 0.6rem;
-}
-
-.about-brand-description {
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.7;
-}
 
 .about-image:hover img {
   transform: scale(1.05);
@@ -409,10 +404,13 @@
     grid-template-columns: 1fr;
   }
 
-  .about-brand {
-    grid-template-columns: 1fr;
-    padding: 2rem;
-    margin-bottom: 1.75rem;
+  .about-industries {
+    padding: 2.5rem 2rem;
+  }
+
+  .about-industries-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
   }
 
   .about-owner {
@@ -470,15 +468,48 @@
     font-size: 0.95rem;
   }
 
-  .about-brand {
-    padding: 1.75rem;
+  .about-industries {
+    padding: 2rem 1.5rem;
+  }
+
+  .about-industries-title {
+    font-size: 2.2rem;
+  }
+
+  .about-industries-description {
+    font-size: 0.95rem;
+  }
+
+  .about-industries-grid {
+    grid-template-columns: 1fr;
     gap: 1.5rem;
-    margin-bottom: 1.5rem;
+  }
+
+  .industry-card-image {
+    height: 180px;
+  }
+
+  .industry-card-name {
+    font-size: 1.1rem;
+    margin: 1rem 1.25rem 0.4rem;
+  }
+
+  .industry-card-description {
+    font-size: 0.9rem;
+    margin: 0 1.25rem 1.25rem;
   }
 
   .about-owner {
     padding: 1.75rem;
     gap: 1.5rem;
+  }
+
+  .about-owner-name {
+    font-size: 1.5rem;
+  }
+
+  .about-owner-role {
+    font-size: 1rem;
   }
 }
 

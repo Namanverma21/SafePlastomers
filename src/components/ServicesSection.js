@@ -29,30 +29,30 @@ const ServicesSection = () => {
     {
       id: 1,
       title: 'LINER & PRINTED BAGS',
-      icon: '📦',
+      icon: '/images/company/printed linearbag.jpg',
       description: 'LD/HM/PP liner and printed liner bags built with advanced extrusion and high-speed printing for durable, consistent, brand-ready packaging.',
     },
     {
       id: 2,
       title: 'FILMS & SHRINK SOLUTIONS',
-      icon: '🏭',
+      icon: '/images/company/ld shrink and roll.jpg',
       description: 'PP woven sacks, stretch film, and LD/PVC shrink rolls & pouches engineered for clarity, protection, and efficient bundling.',
     },
     {
       id: 3,
       title: 'CUSTOMIZED INDUSTRIAL PACKAGING',
-      icon: '⚙️',
+      icon: '/images/company/company bg2.jpg',
       description: 'End-to-end packaging solutions tailored to unique industrial requirements with efficiency-driven concepts that cut operational costs.',
     },
   ];
 
   const machineImages = [
-    '/images/company/Machine1.jpg',
-    '/images/company/Machine2.jpg',
-    '/images/company/Machine3.jpg',
-    '/images/company/Machine4.jpg',
-    '/images/company/Machine5.jpg',
-    '/images/company/material.jpg',
+    { src: '/images/company/Machine1.jpg', title: 'Cutting Machine' },
+    { src: '/images/company/Machine2.jpg', title: 'Cutting Machine' },
+    { src: '/images/company/Machine5.jpg', title: 'Cutting Machine' },
+    { src: '/images/company/Machine3.jpg', title: 'Linear Bag Blown Extrusion Machine' },
+    { src: '/images/company/Machine4.jpg', title: 'Linear Bag Blown Extrusion Machine' },
+    { src: '/images/company/linar blown ex.jpg', title: 'Linear Bag Blown Extrusion Machine' },
   ];
 
   return (
@@ -73,7 +73,13 @@ const ServicesSection = () => {
               className="service-card reveal"
               style={{ transitionDelay: `${index * 80}ms` }}
             >
-              <div className="service-icon">{service.icon}</div>
+              <div className="service-icon">
+                {service.icon.startsWith('/images') ? (
+                  <img src={service.icon} alt={service.title} />
+                ) : (
+                  service.icon
+                )}
+              </div>
               <h4 className="service-title">{service.title}</h4>
               <p className="service-description">{service.description}</p>
             </div>
@@ -98,13 +104,16 @@ const ServicesSection = () => {
           <p className="services-gallery-subtitle">Snapshots from our production floor and material prep.</p>
         </div>
         <div className="services-gallery-grid">
-          {machineImages.map((src, index) => (
+          {machineImages.map((item, index) => (
             <div
-              key={src}
+              key={item.src}
               className="services-gallery-card reveal"
               style={{ transitionDelay: `${index * 70}ms` }}
             >
-              <img src={src} alt={`Machine or material ${index + 1}`} loading="lazy" />
+              <img src={item.src} alt={item.title || `Machine or material ${index + 1}`} loading="lazy" />
+              {item.title && (
+                <div className="services-gallery-card-title">{item.title}</div>
+              )}
             </div>
           ))}
         </div>

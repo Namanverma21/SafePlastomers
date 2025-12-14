@@ -10,7 +10,7 @@ const AboutSection = () => {
   const stats = [
     { number: 17, label: 'Years of Excellence' },
     { number: 2008, label: 'Journey Began' },
-    { number: 9, label: 'Industries Served' },
+    { number: 400, label: 'Industries Served', showPlus: true },
   ];
 
   useEffect(() => {
@@ -69,31 +69,55 @@ const AboutSection = () => {
 
   return (
     <section className="about-section" ref={sectionRef}>
-      <div className="about-brand">
-        <div className="about-brand-image">
-          <img
-            src="/images/company/Logo.jpg"
-            alt="Safe Plastomer logo"
-            loading="lazy"
-          />
-        </div>
-        <div className="about-brand-text">
-          <h4 className="about-brand-title">Our refreshed identity</h4>
-          <p className="about-brand-description">
-            The new logo reflects our evolution from Safe Packaging to Safe Plastomer, combining strength,
-            flexibility, and sustainability in every solution we deliver.
+      <div className="about-industries">
+        <div className="about-industries-header">
+          <h4 className="about-industries-title">Industries We Serve</h4>
+          <p className="about-industries-description">
+            We provide comprehensive packaging solutions across diverse industries, delivering quality and reliability
+            tailored to each sector's unique requirements.
           </p>
-          <div className="about-brand-gallery">
-            {[
-              '/images/company/brand1.jpg',
-              '/images/company/brand2.jpg',
-              '/images/company/brand3.jpg',
-            ].map((src, idx) => (
-              <div className="brand-thumb" key={src}>
-                <img src={src} alt={`Brand application ${idx + 1}`} loading="lazy" />
+        </div>
+        <div className="about-industries-grid">
+          {[
+            {
+              name: 'FMCG',
+              image: '/images/company/fmcg.jpg',
+              description: 'Fast-Moving Consumer Goods Packaging Solutions'
+            },
+            {
+              name: 'Pharmaceutical',
+              image: '/images/company/phara cutiral.jpg',
+              description: 'Pharmaceutical Packaging Solutions'
+            },
+            {
+              name: 'E-commerce',
+              image: '/images/company/e commerce.jpg',
+              description: 'E-commerce Packaging Solutions'
+            },
+            {
+              name: 'Customized',
+              image: '/images/company/customized.jpg',
+              description: 'Customized Industrial Packaging'
+            },
+            {
+              name: 'Agriculture',
+              image: '/images/company/agriculture.jpg',
+              description: 'Agricultural Packaging Solutions'
+            },
+            {
+              name: 'Industrial Goods',
+              image: '/images/company/indusatrial goods.jpg',
+              description: 'Industrial Goods Packaging'
+            },
+          ].map((industry, idx) => (
+            <div key={idx} className="industry-card">
+              <div className="industry-card-image">
+                <img src={industry.image} alt={industry.name} loading="lazy" />
               </div>
-            ))}
-          </div>
+              <h5 className="industry-card-name">{industry.name}</h5>
+              <p className="industry-card-description">{industry.description}</p>
+            </div>
+          ))}
         </div>
       </div>
       <div className="about-container">
@@ -116,7 +140,7 @@ const AboutSection = () => {
             {stats.map((stat, index) => (
               <div key={index} className="stat-item">
                 <div className="stat-number">
-                  {counters[index]}
+                  {counters[index]}{stat.showPlus && counters[index] >= stat.number ? '+' : ''}
                 </div>
                 <div className="stat-label">{stat.label}</div>
               </div>
@@ -140,6 +164,8 @@ const AboutSection = () => {
           />
         </div>
         <div className="about-owner-text">
+          <h3 className="about-owner-name">Mr. Amit Tibrewal</h3>
+          <p className="about-owner-role">Founder, Director & Visionary Leader</p>
           <h4 className="about-owner-title">Guided by experience</h4>
           <p className="about-owner-description">
             Our leadership team brings hands-on expertise across flexible packaging, material science,

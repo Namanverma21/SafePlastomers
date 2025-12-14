@@ -32,6 +32,7 @@ const Header = () => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         <Link to="/" className="logo" onClick={closeMenu}>
+          <img src="/images/company/Logo.jpg" alt="Safe Plastomer Logo" className="logo-image" />
           Safe Plastomer
         </Link>
         
