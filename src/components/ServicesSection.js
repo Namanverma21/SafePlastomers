@@ -41,7 +41,7 @@ const ServicesSection = () => {
     {
       id: 3,
       title: 'CUSTOMIZED INDUSTRIAL PACKAGING',
-      icon: '/images/company/company bg.jpg',
+      icon: '/images/company/customized.jpg',
       description: 'End-to-end packaging solutions tailored to unique industrial requirements with efficiency-driven concepts that cut operational costs.',
     },
   ];

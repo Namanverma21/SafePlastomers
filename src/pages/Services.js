@@ -84,7 +84,7 @@ const Services = () => {
     {
       id: 7,
       title: 'CUSTOMIZED INDUSTRIAL PACKAGING SOLUTIONS',
-      icon: '/images/company/company bg2.jpg',
+      icon: '/images/company/customized.jpg',
       description: 'End-to-end, industry-specific packaging built to optimize material usage and reduce operational costs.',
       features: [
         'Custom specifications and designs',
