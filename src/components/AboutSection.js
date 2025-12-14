@@ -2,16 +2,16 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './AboutSection.css';
 
+const stats = [
+  { number: 17, label: 'Years of Excellence' },
+  { number: 2008, label: 'Journey Began' },
+  { number: 400, label: 'Industries Served', showPlus: true },
+];
+
 const AboutSection = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [counters, setCounters] = useState([0, 0, 0]);
   const sectionRef = useRef(null);
-
-  const stats = [
-    { number: 17, label: 'Years of Excellence' },
-    { number: 2008, label: 'Journey Began' },
-    { number: 400, label: 'Industries Served', showPlus: true },
-  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -20,16 +20,25 @@ const AboutSection = () => {
           setIsVisible(true);
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.1, rootMargin: '0px' }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    const currentRef = sectionRef.current;
+    if (currentRef) {
+      // Check if element is already visible
+      const rect = currentRef.getBoundingClientRect();
+      const isInViewport = rect.top < window.innerHeight && rect.bottom > 0;
+      
+      if (isInViewport && !isVisible) {
+        setIsVisible(true);
+      } else {
+        observer.observe(currentRef);
+      }
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, [isVisible]);
@@ -50,7 +59,8 @@ const AboutSection = () => {
         currentStep++;
         setCounters(prev => {
           const newCounters = [...prev];
-          newCounters[index] = Math.min(Math.round(increment * currentStep), stat.number);
+          const newValue = Math.min(Math.round(increment * currentStep), stat.number);
+          newCounters[index] = newValue;
           return newCounters;
         });
 
