@@ -168,7 +168,7 @@ const AboutSection = () => {
       <div className="about-owner">
         <div className="about-owner-image">
           <img
-            src="/images/company/owner.png"
+            src="/images/company/Founderrr.jpeg"
             alt="Safe Plastomer leadership portrait"
             loading="lazy"
           />
